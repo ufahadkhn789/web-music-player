@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Simple Web Music Player</title>
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <header>
+        <h1>Simple Music Player</h1>
+      </header>
+
+      <section class="controls-top">
+        <input id="search" type="search" placeholder="Search by title or artist" />
+        <select id="categoryFilter">
+          <option value="all">All categories</option>
+        </select>
+        <input id="fileUpload" type="file" accept="audio/*" multiple title="Upload audio files" />
+        <button id="loadSamples">Load More Samples</button>
+        <button id="shuffle" title="Shuffle">Shuffle</button>
+        <button id="repeat" title="Repeat: off">Repeat</button>
+      </section>
+
+      <main>
+        <aside class="playlist">
+          <h2>Playlist</h2>
+          <ul id="playlist"></ul>
+        </aside>
+
+        <section class="player">
+          <div class="now-playing">
+            <div id="trackTitle">—</div>
+            <div id="trackArtist" class="muted">—</div>
+          </div>
+
+          <div class="controls">
+            <button id="prev">⟨⟨</button>
+            <button id="play">Play</button>
+            <button id="next">⟩⟩</button>
+            <label class="volume">Vol <input id="volume" type="range" min="0" max="1" step="0.01" value="0.8" /></label>
+          </div>
+
+          <div class="progress">
+            <span id="currentTime">0:00</span>
+            <input id="progress" type="range" min="0" max="100" value="0" />
+            <span id="duration">0:00</span>
+          </div>
+
+          <audio id="audio" preload="metadata"></audio>
+        </section>
+      </main>
+    </div>
+
+    <script src="js/app.js"></script>
+  </body>
+</html>
